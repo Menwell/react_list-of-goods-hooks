@@ -36,7 +36,7 @@ function sortGoods(sortBy: SortType, reverse: boolean) {
     },
   );
 
-  return reverse ? result.toReversed() : result;
+  return reverse ? result.reverse() : result;
 }
 
 export const App: React.FC = () => {
@@ -92,13 +92,11 @@ export const App: React.FC = () => {
       </div>
 
       <ul>
-        <ul>
-          {visibleGoods.map(good => (
-            <li data-cy="Good" key={good}>
-              {good}
-            </li>
-          ))}
-        </ul>
+        {visibleGoods.map(good => (
+          <li data-cy="Good" key={good}>
+            {good}
+          </li>
+        ))}
       </ul>
     </div>
   );
